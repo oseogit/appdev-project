@@ -1,0 +1,16 @@
+@import "tailwindcss";
+@theme inline {
+  --color-sky: #1E96D2; --color-skydk: #167BB0; --color-skylt: #8FD0EE;
+  --color-ink: #3F4A55; --color-sun: #F2E94E; --color-mist: #E6F4FB;
+  --font-display: var(--font-fredoka), sans-serif;
+}
+.labago :is(h1, h2, h3) { font-family: var(--font-fredoka), sans-serif; font-weight: 700; }
+.labago :is(h1, h2) { color: #1F8FC7; }
+.labago :focus-visible { outline: 3px solid #167BB0; outline-offset: 2px; }
+@layer components {
+  .labago .btn { @apply inline-flex items-center justify-center rounded-full bg-skydk px-6 py-2.5 font-bold text-white transition hover:bg-sky; }
+  .labago .btn-sun { @apply inline-flex items-center justify-center rounded-full bg-sun px-6 py-2.5 font-bold text-ink transition hover:brightness-95; }
+  .labago .input { @apply w-full rounded-lg border-2 border-skylt bg-white px-3 py-2.5 focus:border-skydk; }
+  .labago .label { @apply mb-1 block text-sm font-bold; }
+}
+@media (prefers-reduced-motion: reduce) { .labago * { transition: none !important; } }
